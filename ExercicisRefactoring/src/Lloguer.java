@@ -2,21 +2,21 @@ import java.util.Date;
 
 public class Lloguer {
 
-	private Date data;
+	private String data;
 	private int dies;
 	private Vehicle vehicle; 
 
 
-	public Lloguer(Date data, int dies) {
+	public Lloguer(String data, int dies, Vehicle vehicle) {
 		this.data = data;
 		this.dies = dies;		
 	}
-
-	public Date getData() {
+	
+	public String getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 
@@ -35,5 +35,12 @@ public class Lloguer {
 	public void setVehicle(Vehicle vehicle) {
 		this.vehicle = vehicle;
 	}
-	
+    public String getMarca(Vehicle vehicle) {
+        return vehicle.getMarca();
+    }
+
+    public String getModel(Vehicle vehicle) {
+        return vehicle.getModel();
+    }
+
 }

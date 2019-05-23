@@ -19,7 +19,7 @@ public class Vehicle {
 
 	public String getModel() {
 		return model;
-	}
+	}	
 
 	public String getMarca() {
 		return marca;
@@ -28,4 +28,18 @@ public class Vehicle {
 	public int getCategoria() {
 		return categoria;
 	}
+	
+	public void setCategoria(int categoria) {
+        this.categoria = categoria;
+    }
+	
+	public void setMarca(String marca) {
+        this.marca = marca;
+    }
+	
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+
 }
