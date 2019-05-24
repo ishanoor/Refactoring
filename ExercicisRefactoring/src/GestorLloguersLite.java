@@ -30,11 +30,9 @@ public class GestorLloguersLite {
         System.out.println("Nif: "+ client.getNif());
         System.out.println("Telefon: "+ client.getTelefon());
         
-        System.out.println("\nInformació del lloguers");
+        System.out.println("\n Informació del lloguers");
         System.out.println("Lloguers: " + client.numlloguers());
         for (int i = 0; i < client.numlloguers(); i++) {
-        	System.out.println("Marca: " + client.getMarca(lloguers.get(i)));
-        	System.out.println("Model: " + client.getModel(lloguers.get(i)));       	
             System.out.println("Data d'inici: " + client.getData(lloguers.get(i)));
             System.out.println("Dies llogats: " + client.getDies(lloguers.get(i)) + "\n");
         }

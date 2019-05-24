@@ -5,9 +5,9 @@ public class Vehicle {
 	private String marca;
 	private int categoria;
 	
-	public static final int BASIC = 0;
-	public static final int GENERAL = 1;
-	public static final int LUXE = 2;
+	public static int BASIC = 0;
+	public static int GENERAL = 1;
+	public static int LUXE = 2;
 
 	
 
@@ -24,11 +24,7 @@ public class Vehicle {
 	public String getMarca() {
 		return marca;
 	}
-	
-    public int getCategoriaNumber() {
-        return categoria;
-    }
-    
+
 	public int getCategoria() {
 		return categoria;
 	}

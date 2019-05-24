@@ -9,8 +9,7 @@ public class Lloguer {
 
 	public Lloguer(String data, int dies, Vehicle vehicle) {
 		this.data = data;
-		this.dies = dies;
-		this.vehicle = vehicle; 
+		this.dies = dies;		
 	}
 	
 	public String getData() {
@@ -30,7 +29,7 @@ public class Lloguer {
 	}
 	
 	public Vehicle getVehicle() {
-		return this.vehicle;
+		return vehicle;
 	}
 
 	public void setVehicle(Vehicle vehicle) {
