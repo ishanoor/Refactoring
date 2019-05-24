@@ -73,7 +73,7 @@ public class Client {
                     lloguer.getDies()>1 ) {
                 bonificacions ++;
             }
-
+ 
             // composa els resultats d'aquest lloguer
             resultat += "\t" +
                 lloguer.getVehicle().getMarca() +
