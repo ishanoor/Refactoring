@@ -28,7 +28,7 @@ public class Client {
     public void afegeix(Lloguer lloguer) {
         if (! lloguers.contains(lloguer) ) {
             lloguers.add(lloguer);
-        }
+        } 
     }
     public void elimina(Lloguer lloguer) {
         if (lloguers.contains(lloguer) ) {
@@ -48,14 +48,7 @@ public class Client {
         for (Lloguer lloguer: lloguers) {
         	double quantitat = lloguer.quantitat();
 
-            // afegeix lloguers freqüents
-            bonificacions ++;
-
-            // afegeix bonificació per dos dies de lloguer de Luxe
-            if (lloguer.getVehicle().getCategoria() == Vehicle.LUXE &&
-                    lloguer.getDies()>1 ) {
-                bonificacions ++;
-            }
+        	bonificacions += bonificacionsDeLloguer(lloguer);
  
             // composa els resultats d'aquest lloguer
             resultat += "\t" +
@@ -71,8 +64,16 @@ public class Client {
             "Punts guanyats: " + bonificacions + "\n";
         return resultat;
     }
+    
+    public int bonificacionsDeLloguer(Lloguer lloguer) {
+    	int bonificacions = 1;
+    	if (lloguer.getVehicle().getCategoria() == Vehicle.LUXE &&
+                lloguer.getDies()>1 ) {
+            bonificacions ++;
+        }
+		return bonificacions;
+	}
 
-	
 
 	public int numlloguers() {
 		return lloguers.size();
