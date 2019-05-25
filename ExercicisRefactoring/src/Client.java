@@ -14,7 +14,7 @@ public class Client {
         this.telefon = telefon;
         this.lloguers = new Vector<Lloguer>();
     }
- 
+  
     public String getNif()     { return nif;     }
     public String getNom()     { return nom;     }
     public String getTelefon() { return telefon; }
@@ -59,7 +59,7 @@ public class Client {
                     lloguer.getVehicle().getMarca() +
                     " " +
                     lloguer.getVehicle().getModel() + ": " +
-                    (lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
+                    (lloguer.cost_Total() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
         }
         return resultat;
     }
@@ -73,7 +73,7 @@ public class Client {
     public double importTotal() {
     	double total = 0;
     	for (Lloguer lloguer: lloguers) {
-    		total += lloguer.quantitat() * 30;
+    		total += lloguer.cost_Total() * 30;
     	}
     	return total;
     }
