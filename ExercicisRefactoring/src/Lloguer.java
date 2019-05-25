@@ -43,23 +43,31 @@ public class Lloguer {
         return vehicle.getModel();
     }
      
+    private static final int UNITAT_DE_COST_BASIC = 3;
+    private static final int NOMBRE_DE_DIES_INICIAL_BASIC = 3;
+    private static final int UNITAT_DE_COST_GENERAL = 4;
+    private static final int NOMBRE_DE_DIES_INICIAL_GENERAL = 2;
+    private static final int UNITAT_DE_COST_LUXE = 6;
+    private static final double MULTIPLICACIÓ_BASIC = 1.5;
+    private static final double MULTIPLICACIÓ_GENERAL = 2.5;
+    
     public double quantitat() {
 		double quantitat = 0;
         switch (this.getVehicle().getCategoria()) {
             case Vehicle.BASIC:
-                quantitat += 3;
-                if (this.getDies() > 3) {
-                    quantitat += (this.getDies() - 3) * 1.5;
+                quantitat += UNITAT_DE_COST_BASIC;
+                if (this.getDies() >  NOMBRE_DE_DIES_INICIAL_BASIC) {
+                    quantitat += (this.getDies() -  NOMBRE_DE_DIES_INICIAL_BASIC) * MULTIPLICACIÓ_BASIC;
                 }
                 break;
             case Vehicle.GENERAL:
-                quantitat += 4;
-                if (this.getDies() > 2) {
-                    quantitat += (this.getDies() - 2) * 2.5;
+                quantitat += UNITAT_DE_COST_GENERAL;
+                if (this.getDies() > NOMBRE_DE_DIES_INICIAL_GENERAL) {
+                    quantitat += (this.getDies() - NOMBRE_DE_DIES_INICIAL_GENERAL) * MULTIPLICACIÓ_GENERAL;
                 }
                 break;
             case Vehicle.LUXE:
-                quantitat += this.getDies() * 6;
+                quantitat += this.getDies() * UNITAT_DE_COST_LUXE ;
                 break;
         }
  
