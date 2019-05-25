@@ -64,7 +64,7 @@ public class Lloguer {
                 quantitat += this.getDies() * 6;
                 break;
         }
-
+ 
 		return quantitat;
 	}
     

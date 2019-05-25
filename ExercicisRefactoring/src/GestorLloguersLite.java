@@ -22,7 +22,7 @@ public class GestorLloguersLite {
 		
 		InformacionGeneralClient(newClicnt, newClicnt.getLloguers());
 			
-	}
+	} 
 	
 	 
     public static void InformacionGeneralClient(Client client, Vector<Lloguer> lloguers){
