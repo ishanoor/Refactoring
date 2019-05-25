@@ -38,7 +38,7 @@ public class Client {
     public boolean conte(Lloguer lloguer) {
         return lloguers.contains(lloguer);
     }
-
+ 
     public String informe() { 
         double total = 0;
         int bonificacions = 0;
@@ -48,7 +48,7 @@ public class Client {
         for (Lloguer lloguer: lloguers) {
         	double quantitat = lloguer.quantitat();
 
-        	bonificacions += bonificacionsDeLloguer(lloguer);
+        	bonificacions += lloguer.bonificacionsDeLloguer();
  
             // composa els resultats d'aquest lloguer
             resultat += "\t" +
@@ -65,14 +65,6 @@ public class Client {
         return resultat;
     }
     
-    public int bonificacionsDeLloguer(Lloguer lloguer) {
-    	int bonificacions = 1;
-    	if (lloguer.getVehicle().getCategoria() == Vehicle.LUXE &&
-                lloguer.getDies()>1 ) {
-            bonificacions ++;
-        }
-		return bonificacions;
-	}
 
 
 	public int numlloguers() {
