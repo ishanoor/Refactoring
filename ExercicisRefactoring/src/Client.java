@@ -1,4 +1,3 @@
-import java.util.Date;
 import java.util.Vector;
 
 public class Client {
@@ -6,6 +5,7 @@ public class Client {
     private String nom;
     private String telefon;
     private Vector<Lloguer> lloguers;
+    private static final double EUROS_PER_UNITAT_DE_COST = 30;
 	
 
     public Client(String nif, String nom, String telefon) {
@@ -14,7 +14,7 @@ public class Client {
         this.telefon = telefon;
         this.lloguers = new Vector<Lloguer>();
     }
-
+ 
     public String getNif()     { return nif;     }
     public String getNom()     { return nom;     }
     public String getTelefon() { return telefon; }
@@ -38,26 +38,38 @@ public class Client {
     public boolean conte(Lloguer lloguer) {
         return lloguers.contains(lloguer);
     }
-  
+   
     public String informe() { 
-        String resultat = "Informe de lloguers del client " +
-            getNom() +
-            " (" + getNif() + ")\n";
+    	 return composaCapsalera() +
+                 composaDetall() +
+                 composaPeu();
+    }
+    
+    public String composaCapsalera() {
+        return "Informe de lloguers del client " +
+                getNom() +
+                " (" + getNif() + ")\n";
+    }
+    
+    public String composaDetall() {
+        String resultat = "";
         for (Lloguer lloguer: lloguers) {
-        	double quantitat = lloguer.quantitat(); 
             // composa els resultats d'aquest lloguer
             resultat += "\t" +
-                lloguer.getVehicle().getMarca() +
-                " " +
-                lloguer.getVehicle().getModel() + ": " +
-                (quantitat * 30) + "€" + "\n";
+                    lloguer.getVehicle().getMarca() +
+                    " " +
+                    lloguer.getVehicle().getModel() + ": " +
+                    (lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST) + "€" + "\n";
         }
-
-        // afegeix informació final
-        resultat += "Import a pagar: " + importTotal() + "€\n" +
-            "Punts guanyats: " + bonificacionsTotals() + "\n";
         return resultat;
     }
+        
+        public String composaPeu() {
+    	    String resultat = "Import a pagar: " + importTotal() + "€\n" +
+    	        "Punts guanyats: " + bonificacionsTotals() + "\n";
+    	    return resultat;
+        }
+        
     public double importTotal() {
     	double total = 0;
     	for (Lloguer lloguer: lloguers) {
