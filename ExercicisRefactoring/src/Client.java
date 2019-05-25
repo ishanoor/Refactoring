@@ -107,4 +107,43 @@ public class Client {
         return lloguer.getDies();
     }
     
+    public String composaCapcaleraHTML() {
+    	String resultat = "<h1>Informe de lloguers</h1>\n" +
+    					  "<p>Informe de lloguers del client <em>" +
+    	        getNom() + "</em> (<strong>" + getNif() + "</strong>)</p>\n";
+    	return resultat;
+    }
+    
+    public String composaDetallHTML() {
+    	String resultat = "<table>\n<tr><td><strong>Marca</strong></td><td><strong>Model</strong></td><td><strong>Import</strong></td></tr>";
+    	for (Lloguer lloguer: lloguers) {
+	        resultat += "<tr><td>" +
+	            lloguer.getVehicle().getMarca() +
+	            "</td><td>" +
+	            lloguer.getVehicle().getModel() + "</td><td>" +
+	            (lloguer.cost_Total() * EUROS_PER_UNITAT_DE_COST) + "€" + "</td></tr>\n";
+	    }
+    	resultat += "</table>\n";
+    	return resultat;
+    }
+     
+    public String composaPeuHTML() {
+	    String resultat = "<p>Import a pagar: <em>" + importTotal() + "€</em></p>\n" +
+	        "<p>Punts guanyats: <em>" + bonificacionsTotals() + "</em></p>\n";
+	    return resultat;
+    }
+    
+    public String informeHTML() {
+    	return composaCapcaleraHTML() +
+	    		composaDetallHTML() +
+	    		composaPeuHTML();
+    }
+    
+    
+    
+    
+    
+
+
+    
 }

@@ -137,7 +137,7 @@ public class TestClient {
 															 "Import a pagar: 1800.0€\n" +
 															 "Punts guanyats: 2\n";
 				Assert.assertEquals(resultat,informe);
-				
+ 				
 			}
 			//Test: cap lloguer
 			@Test
@@ -149,7 +149,7 @@ public class TestClient {
 															 "Punts guanyats: 0\n";
 				Assert.assertEquals(resultat,informe);
 				
-			}
+			}			
 			
 			public static void main(String args[]) {
 		        org.junit.runner.JUnitCore.main("TestClient");
