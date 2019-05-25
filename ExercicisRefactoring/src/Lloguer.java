@@ -44,7 +44,7 @@ public class Lloguer {
     public String getModel(Vehicle vehicle) {
         return vehicle.getModel();
     }
-    
+     
     public double quantitat() {
 		double quantitat = 0;
         switch (this.getVehicle().getCategoria()) {
@@ -68,7 +68,7 @@ public class Lloguer {
 		return quantitat;
 	}
     
-    public int bonificacionsDeLloguer() {
+    public int bonificacions() {
     	int bonificacions = 1;
     	if (this.getVehicle().getCategoria() == Vehicle.LUXE &&
                 this.getDies()>1 ) {
