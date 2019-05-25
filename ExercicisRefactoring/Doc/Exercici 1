@@ -1,0 +1,9 @@
+Exercici 1. El meu exemple
+Descriu un exemple de canvi de codi teu que es pugui considerar refacció i un altre que no. Pots fer servir codi de qualsevol dels teus exercicis del cicle (especifica la procedència). No oblidis descriure el perquè de la teva classificació basant-te en els conceptes d’aquesta secció.
+
+El meu exemple de refactoring és, Treure el mètode duplicat.
+
+Haviem de fer un projecte d'escacs en programació i jo em tria fer 2 peces que eren Reina i Torre.
+
+Com que les 2 peces tenen funcio iguals excepte reina té 2 funcio mes que torre. Doncs vaig craer els mètodes de reina de moure en horizental, vertical i diagonal.
+I com que torre té moviment de moure en horizental i vertical doncs truqui directament els mètodes de reina per fer aquesta peça sense crear els mateix mètodes altra vegada.
